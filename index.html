@@ -1,0 +1,56 @@
+ <!DOCTYPE html>
+ <html>
+     <head>
+		<meta charset="utf-8">
+		<title>Workshop PHAS3R: Platformer</title>
+		<style>
+           html,
+           body {
+             margin: 0;
+             padding: 0;
+             image-rendering: optimizeSpeed;              /* Older versions of FF */
+             image-rendering: -moz-crisp-edges;           /* FF 6.0+ */
+             image-rendering: -webkit-optimize-contrast;  /* Webkit (non standard naming) */
+             image-rendering: -o-crisp-edges;             /* OS X & Windows Opera (12.02+) */
+             image-rendering: crisp-edges;                /* Possible future browsers. */
+             -ms-interpolation-mode: nearest-neighbor;    /* IE (non standard naming) */
+             image-rendering: pixelated;                  /* Chrome 41 */
+             overflow: hidden;
+           },
+           canvas {
+             height: 100%;
+           }
+		</style>
+     </head>
+     <body>		
+		<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
+		<script>
+		  // Initialize Firebase
+		  var config = {
+			/// Insert your config
+		  };
+		  firebase.initializeApp(config);
+		</script>
+		
+		<script src="index.js" charset="utf-8"></script>
+		<form>
+			<input type="text" id="textF" placeholder="name"><br>
+			<input type="text" id="idF" placeholder="id"><br>
+			<input type="text" id="scoreF" placeholder="score"><br>
+			
+			<!-- <input type="button" onclick="submitData()" id="btn" value="Submit"> -->
+		
+			<input type="button" onclick="changeData()" id="btn" value="Update">
+			
+			<!-- <input type="button" onclick="deleteData()" id="btn" value="Delete"><br> -->
+			
+			<input type="button" onclick="retrieveLeaderboard()" id="btn" value="Leaderboard">
+			 
+			<input type="button" onclick="pushIncrementData()" id="btn" value="Push">
+			
+			<input type="button" onclick="reqTotalUser()" id="btn" value="Total User">
+		</form> 
+     </body>
+ </html>
